@@ -100,7 +100,7 @@ class GifCodec
             spec = Object.assign({}, spec); // don't munge caller's spec
             spec.width = dims.maxWidth;
             spec.height = dims.maxHeight;
-            spec.loops = spec.loops || 0;
+            spec.loops = spec.loops || 0 || null;
             spec.colorScope = spec.colorScope || Gif.GlobalColorsPreferred;
 
             return Promise.resolve(this._encodeGif(frames, spec));
